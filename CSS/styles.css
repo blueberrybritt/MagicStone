@@ -47,6 +47,8 @@ header {
 
 .search-table{
     border-bottom: 2px solid;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 td {
@@ -118,6 +120,28 @@ h6 {
     grid-row: span 2;
 }
 
+
+
+.grid-container {
+
+    --gap: 20px;
+    --num-cols: 4;
+    
+    box-sizing: border-box;
+    padding: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    gap: var(--gap);
+    align-content: center;
+}
+
+.image-grid > .grid-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 @media screen and (max-width: 1024px) {
     .image-grid {
         --num-cols: 2;
@@ -125,29 +149,75 @@ h6 {
     .image-grid-col-4 {
         grid-column: span 2;
     }
+
+    .grid-container {
+        --num-cols: 2
+    }
 }
 
-.image-bench {
-    background-image: url("/img/bench.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    position: relative;
+.bench {
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
-.image-diamond {
-    background-image: url("/img/diamond.jpg");
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.image-man {
-    background-image: url("/img/man.jpg");
+.diamond {
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
-.image-band {
-    background-image: url("/img/band.jpg");
-
+.diamond-text {
+  position: absolute;
+  bottom: 10px;
+  left: 25%
 }
 
-.image-woman {
-    background-image: url("/img/woman.jpg");
+.man {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.man-text {
+  position: absolute;
+  bottom: 10px;
+  left: 20%;
+}
+
+.band {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.band-text {
+  position: absolute;
+bottom: 10px;
+  left: 17%
+}
+
+.woman {
+  position: relative;
+  text-align: left;
+  color: white;
+}
+
+.woman-text {
+  position: absolute;
+  top: 20px;
+  left: 50%
+}
+
+.woman-paragraph {
+    font-size: medium;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
